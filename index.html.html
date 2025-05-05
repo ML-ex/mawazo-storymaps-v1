@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Map</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Hero Section Styles */
+    .hero-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px;
+      background-color: #f4f4f4;
+    }
+
+    .hero-text {
+      max-width: 50%;
+    }
+
+    .hero-text h1 {
+      font-size: 30px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .hero-text .subtext {
+      font-size: 18px;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    .hero-text .date {
+      font-size: 16px;
+      color: #777;
+      margin-top: 5px;
+    }
+
+    .hero-image img {
+      width: 800px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .section {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 40px;
+      padding: 20px;
+    }
+
+    .map-container {
+      flex: 2;
+      height: 600px;
+    }
+
+    .narrative-container {
+      flex: 2;
+      padding: 20px;
+      background-color: #f9f9f9;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .narrative-container p {
+      font-size: 24px;
+      line-height: 2.0;        
+      color: #333;
+    }
+    <!--
+    .narrative-input {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 24px;
+      line-height: 2.0;
+    }
+    -->
+
+    h2 {
+      width: 100%;
+      margin: 10px 20px 0;
+    }
+
+    #map, #map2, #map3, #map4, #map5 {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-text">
+      <h1>Mapping COVID-19's Impact on African Research and Higher-Ed</h1>
+      <p class="subtext">Regional Highlights from Mawazo's COVID-19 Survey Findings</p>
+      <p class="date">February 24th, 2022</p>
+    </div>
+    <div class="hero-image">
+      <img src="researcher.jpg" alt="Researcher at work">
+    </div>
+  </section>
+
+  <!-- Section 1 -->
+  <h2>Classes Affected by Covid-19</h2>
+  <div class="section">
+    <div class="map-container">
+      <div id="map"></div>
+    </div>
+    <div class="narrative-container">
+      <p>
+                The map shows respondents whose institutions were affected by COVID-19. A dark colour indicates that a larger percentage of respondents in the region were affected, while a light colour indicates a smaller percentage of respondents were affected.
+       
+                North Africa had the highest percentage of respondents whose classes had been affected by COVID-19 (93.3%) 
+                
+                while Central Africa had the lowest (83.3%)</p>
+      <textarea class="narrative-input" rows="4" placeholder="Share your thoughts or narrative here..."></textarea>
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <h2>Institutions Offering Elearning</h2>
+  <div class="section">
+    <div class="map-container">
+      <div id="map2"></div>
+    </div>
+    <div class="narrative-container">
+      <p>Only 57.9% of respondents in West Africa were at institution offering e-learning options 
+        compared to 100% of respondents in Central Africa.</p>
+      <textarea class="narrative-input" rows="4" placeholder="Share your observations..."></textarea>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <h2>Individuals Currently Conducting Research</h2>
+  <div class="section">
+    <div class="map-container">
+      <div id="map3"></div>
+    </div>
+    <div class="narrative-container">
+      <p>Southern Africa had the highest percentage of respondents conducting research at the time of 
+        the survey (93.9%) while East Africa had the lowest (83.6%)
+
+      </p>
+      <textarea class="narrative-input" rows="4" placeholder="Insights or patterns you've noticed?"></textarea>
+    </div>
+  </div>
+
+
+
+  <!-- Section 4 -->
+  <h2>Individuals' Ability to Work from Home</h2>
+  <div class="section">
+    <div class="map-container">
+      <div id="map4"></div>
+    </div>
+    <div class="narrative-container">
+      <p>East Africa had the highest percentage of respondents able to continue working from home during
+        the COVID-19 pandemic (87.7%) while North Africa had the lowest (53.3%).
+
+      </p>
+      <textarea class="narrative-input" rows="4" placeholder="Any regional observations?"></textarea>
+    </div>
+  </div>
+
+
+
+ <!-- Section 5 -->
+ <h2>Suspension of Lab Activities</h2>
+ <div class="section">
+   <div class="map-container">
+     <div id="map5"></div>
+   </div>
+   <div class="narrative-container">
+     <p>North Africa had the highest percentage of respondents (85.7%) who had to suspend their lab or field activities 
+      while Central Africa has the lowest percentage of respondents (28.6%).
+
+     </p>
+     <textarea class="narrative-input" rows="4" placeholder="Any regional observations?"></textarea>
+   </div>
+ </div>
+
+
+
+
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-choropleth@1.0.0/leaflet-choropleth.js"></script>
+
+  <!-- Your custom map logic -->
+  <script src="Maps.js"></script>
+</body>
+</html>
