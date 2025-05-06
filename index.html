@@ -116,7 +116,26 @@ overflow: hidden;
 margin: 0;
 padding: 0;
   }
+
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+}
 </style>
+
 
 </head>
 <body>
@@ -222,17 +241,6 @@ padding: 0;
 
   <!-- Your custom map logic -->
   <script src="Maps.js"></script>
-<script>
-  window.addEventListener('load', function () {
-    setTimeout(function () {
-      if (typeof map !== 'undefined') map.invalidateSize();
-      if (typeof map2 !== 'undefined') map2.invalidateSize();
-      if (typeof map3 !== 'undefined') map3.invalidateSize();
-      if (typeof map4 !== 'undefined') map4.invalidateSize();
-      if (typeof map5 !== 'undefined') map5.invalidateSize();
-    }, 300);
-  });
-</script>
 
 </body>
 </html>
